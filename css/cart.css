@@ -1,0 +1,126 @@
+/*
+`
+<div class="cartItems">
+     <div class="col-4">
+    <div class="info">
+    <div class = "image">
+    <img src="${cartProducts[i]?.image}" alt="" />
+    <p>Name : ${cartProducts[i]?.title}</p>
+    <p>Category : ${cartProducts[i]?.category}</p>
+    <p>Rating : ${cartProducts[i]?.rating.rate}</p>
+    <p>Rating Count : ${cartProducts[i]?.rating.count}</p>
+    </div>
+    </div>
+    <div class="price">
+    <p>Price : $${cartProducts[i]?.price}</p>
+    <button onclick='removeProduct(${i})'>Remove</button>
+    </div>
+    </div>
+</div>
+*/
+
+.cartItems {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 800px;
+  margin: 100px auto 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cartItems .col-4 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartItems .col-4:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+
+.cartItems .col-4 .view {
+  display: flex;
+}
+
+.cartItems .col-4 .view .info {
+  width: 350px;
+  margin-left: 20px;
+}
+
+.cartItems .col-4 .view .info p {
+  margin: 8px 0;
+}
+
+.cartItems img {
+  width: 100px;
+  height: 150px;
+}
+
+.cartItems button {
+  width: fit-content;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price button,
+.addOrderBtn {
+  border: none;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ff3c78;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.price button:hover {
+  background-color: white;
+  color: #ff3c78;
+  border: 2px solid #ff3c78;
+}
+
+.addOrderBtn {
+  position: absolute;
+  margin: 20px auto;
+  width: 300px;
+  padding: 10px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 200px;
+  margin-bottom: 50px;
+  transition: transform 0.5s;
+}
+
+.logout {
+  cursor: pointer;
+}

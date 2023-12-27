@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/signup.css" />
+  <title>SignUp</title>
+</head>
+
+<body>
+  <div id="modal-signup" class="modal">
+    <h4>Sign up</h4>
+    <br />
+    <form id="signup-form">
+      <div class="input-field">
+        <label for="signup-email">Email address</label><br>
+        <input type="email" id="signup-email" required />
+      </div>
+      <div class="input-field">
+        <label for="signup-password">Password</label><br>
+        <input type="password" id="signup-password" required />
+      </div>
+      <div class="input-field">
+        <label for="signup-password-reapeat">Repeat Password</label><br>
+        <input type="password" id="signup-password-reapeat" required />
+      </div>
+      <div class="input-field">
+        <label for="first-name">First Name</label> <br>
+        <input type="text" id="first-name" name="firstName" required maxlength="10" />
+      </div>
+      <div class="input-field">
+        <label for="last-name">Last Name</label><br>
+        <input type="text" id="last-name" name="lastName" required />
+      </div>
+      <div class="input-field">
+        <label for="phone-number">Phone Number</label><br>
+        <input type="text" id="phone-number" name="phoneNumber" required maxlength="11" />
+      </div>
+      <span id="err-message"></span>
+      <button class="btn">SIGN UP</button>
+    </form>
+
+    <!-- <button class="logout">Logout</button>  -->
+    <script src="../signup.js" type="module"></script>
+</body>
+
+</html>

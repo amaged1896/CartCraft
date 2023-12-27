@@ -1,0 +1,17 @@
+.prev-orders {
+  margin: 30px;
+  padding: 15px;
+}
+
+.prev-orders h2 {
+  border: none;
+  width: fit-content;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ff3c78;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}

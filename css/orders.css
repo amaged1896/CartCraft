@@ -1,0 +1,65 @@
+/*
+ <h2>Admin Approval Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Order Details</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th>TotalPrice</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody class="ordersTable"></tbody>
+    </table>
+*/
+
+.orders-page {
+  margin: 30px;
+  padding: 15px;
+}
+
+.orders-page h2,
+button {
+  border: none;
+  width: fit-content;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ff3c78;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+table {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.orders-page button {
+  margin: 5px;
+}
+
+.btn {
+  cursor: pointer;
+}
+
+@media (max-width: 1300px) {
+  table td {
+    text-align: center;
+    padding: 15px;
+  }
+  .headers {
+    display: none;
+  }
+  .items {
+    display: flex;
+    flex-direction: column;
+  }
+}

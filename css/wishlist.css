@@ -1,0 +1,75 @@
+.wishitems {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 800px;
+  margin: 100px auto 0;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.wishitems .col-4 {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.wishitems .col-4:not(:last-child) {
+  border-bottom: 1px solid #000;
+}
+
+.wishitems .col-4 .view {
+  display: flex;
+}
+
+.wishitems .col-4 .view .info {
+  width: 350px;
+  margin-left: 20px;
+}
+
+.wishitems .col-4 .view .info p {
+  margin: 8px 0;
+}
+
+.wishitems img {
+  width: 100px;
+  height: 150px;
+}
+
+.wishitems button {
+  width: fit-content;
+}
+
+.wishitems button {
+  border: none;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ff3c78;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+button {
+  border: none;
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #ff3c78;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+
+.addToCartFromWishList {
+  width: 300px;
+}
+
+.dispaly {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

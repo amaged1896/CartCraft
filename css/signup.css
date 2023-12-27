@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url(https://i.postimg.cc/t403yfn9/home2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+}
+
+:root {
+  /* //....... Color ........// */
+  --primary-color: #ff3c78;
+  --light-black: rgba(0, 0, 0, 0.89);
+  --black: #000;
+  --white: #fff;
+  --grey: #aaa;
+}
+
+#modal-signup {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  border: 2px solid black;
+  padding: 50px;
+  border-radius: 5px;
+}
+
+#modal-signup h4 {
+  color: var(--primary-color);
+  font-size: 22px;
+}
+
+#signup-form {
+  font-size: 25px;
+}
+
+#signup-form input {
+  font-size: 20px;
+}
+
+#signup-form button {
+  display: block;
+  border: none;
+  background-color: var(--primary-color);
+  font-size: 22px;
+  padding: 15px;
+  margin-top: 10px;
+  font-weight: 400;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+#signup-form button:hover {
+  background-color: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+}
+
+#signup-form button a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.945);
+  margin: 0 10px;
+}
+
+#err-message {
+  font-size: 16px;
+  color: red;
+  font-weight: bold;
+}
