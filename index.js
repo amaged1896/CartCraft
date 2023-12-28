@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function getPageName(url) {
-  let regexResult = /\/pages\/(\w+)\.html/.exec(url);
+  let regexResult = /\/([^\/]+)\.html$/.exec(url);
   return regexResult ? regexResult[1] : null;
 }
 let mensBtn = document.querySelector(".mensBtn");
@@ -273,15 +273,15 @@ function displayOrdersTable() {
 function placeOrder(cart) {
   if (!localStorage.getItem("user") || !localStorage.getItem("users")) {
     console.error("User or Users data not found in localStorage.");
-    return null; 
+    return null;
   }
 
   let user = JSON.parse(localStorage.getItem("user"));
 
-  
+
   if (!user) {
     console.error("User not found in localStorage.");
-    return null; 
+    return null;
   }
 
   let order = {
@@ -310,7 +310,7 @@ function placeOrder(cart) {
 
   if (!admin) {
     console.error("Admin not found in users data.");
-    return null; 
+    return null;
   }
 
   // send the order to the admin
@@ -323,7 +323,7 @@ function placeOrder(cart) {
     allUsers[adminIndex] = admin;
   } else {
     console.error("Admin not found in users data.");
-    return null; 
+    return null;
   }
 
   // Save the updated allUsers array back to local storage
