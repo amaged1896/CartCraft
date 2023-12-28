@@ -1,213 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-    <title>My Dash Bord</title>
-    <link rel="stylesheet" href="../css/dashboard.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-  </head>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-  <body>
-    <div class="menu">
-      <ul>
-        <li class="profile">
-          <div class="image-box">
-            <img
-              src="../images/Mohamed_Ahmd_Gaber-removebg-preview.png"
-              alt="Profile-Photo"
-            />
-          </div>
-          <h2>M.Gaber</h2>
-        </li>
-        <li class="home">
-          <a href="index.js">
-            <i class="fas fa-home"></i>
-            <p>Home</p>
-          </a>
-        </li>
-        <li class="users">
-          <a href="">
-            <i class="fas fa-user"></i>
-            <p>Users</p>
-          </a>
-        </li>
-        <li class="users">
-          <a href="orders.html">
-            <i class="fas fa-user"></i>
-            <p>Orders</p>
-          </a>
-        </li>
+  <title>My Dash Bord</title>
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
 
-        <li class="products">
-          <a href="">
-            <i class="fas fa-table"></i>
-            <p>Products</p>
-          </a>
-        </li>
-
-        <li class="log-out">
-          <a href="signin.html">
-            <i class="fas fa-sign-out"></i>
-            <p>Logout</p>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="content">
-      <div class="title">
-        <p>dashboard</p>
-        <i class="fas fa-chart-bar"></i>
-      </div>
-
-      <div class="boxs-info">
-        <div class="box usersBox">
-          <div class="data">
-            <p>Users</p>
-            <i class="fas fa-user"></i>
-          </div>
-          <div class="UsersForme">
-            <h3><u>Users Control</u></h3>
-            <label>E-Mail</label>
-            <input id="email" type="text" /><br />
-            <label>FirstName</label>
-            <input id="fnameBox" type="text" /><br />
-            <label>LastName</label>
-            <input id="lNamebox" type="text" /><br />
-
-            <label>Phone</label>
-            <input id="phone" type="text" /><br />
-
-            <label for="">IsAdmin</label>
-            <select id="adminBox" name="Adim" placeholder="Admin or Not">
-              <option value="true">True</option>
-              <option value="false" selected>False</option></select
-            ><br />
-            <hr />
-            <!-- <button id="InsUserbtn">INSERT</button> -->
-            <button id="SelUserbtn">SELECT</button>
-            <button id="UpdUserbtn">UPDATE</button>
-            <button id="DelUserbtn">DELETE</button>
-          </div>
+<body>
+  <div class="menu">
+    <ul>
+      <li class="profile">
+        <div class="image-box">
+          <img src="../images/Mohamed_Ahmd_Gaber-removebg-preview.png" alt="Profile-Photo" />
         </div>
-
-        <div class="box prodBox">
-          <div class="data">
-            <p>products</p>
-          </div>
-          <div class="productForme">
-            <div style="display: flex; justify-content: space-between">
-              <div style="width: 100%">
-                <h3><u>CRUD Products</u></h3>
-                <label>id</label>
-                <input type="text" id="itemId" disabled /><br />
-                <label>Category</label>
-                <select id="categories" name="categories">
-                  <option value="men's clothing">Men's clothing</option>
-                  <option value="women's clothing">Women's clothing</option>
-                  <option value="electronics">Electronics</option>
-                  <option value="jewelry">Jewelry</option></select
-                ><br />
-                <label>Title</label>
-                <input type="text" id="itemTitle" /><br />
-                <label>Price</label>
-                <input type="text" id="itemPrice" /><br />
-                <label>Qty</label>
-                <input type="text" id="itemQty" /><br />
-                <label>Descrip: </label>
-                <textarea
-                  id="decriptionArea"
-                  cols="30"
-                  rows="3"
-                  placeholder="Description of Item"
-                ></textarea>
-              </div>
-              <div style="width: 200px; border-left: 1px solid">
-                <label>ImgName</label> <input type="text" class="imageName" />
-                <label
-                  class="extLab"
-                  style="font-size: 10px; width: 30px; display: none"
-                ></label
-                ><label
-                  class="upProgress"
-                  style="font-size: 10px; width: 30px; display: none"
-                ></label>
-                <label>ImgURL</label>
-                <input type="text" id="itemImg" />
-                <img class="myImg" />
-                <button
-                  class="selbtn"
-                  style="font-size: 10px; width: 70px; display: none"
-                >
-                  SelectImage
-                </button>
-              </div>
-            </div>
-            <div>
-              <hr />
-              <button id="InsItembtn">INSERT</button>
-              <button id="SelItmbtn">SELECT</button>
-              <button id="UpdItmbtn">UPDATE</button>
-              <button id="DelItmbtn">DELETE</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="title productesTbTitle">
-        <div id="productsDisplayDiv">
-          <p>Products</p>
-          <select id="showCategorie" style="width: 150px; margin: 10px">
-            <option value="men's clothing" id="categ">Men's clothing</option>
-            <option value="women's clothing" id="categ">
-              Women's clothing
-            </option>
-            <option value="electronics" id="categ">Electronics</option>
-            <option value="jewelry" id="categ">Jewelry</option>
-          </select>
-          <button id="showSelectedCategory">Show.Selected</button>
-          <button id="ShowAllItems">Show.All.Items</button>
-        </div>
-        <i class="fas fa-table"></i>
-      </div>
-      <div class="title UsersTbTitle">
-        <div id="usersbtnDiv">
+        <h2>M.Gaber</h2>
+      </li>
+      <li class="home">
+        <a href="index.js">
+          <i class="fas fa-home"></i>
+          <p>Home</p>
+        </a>
+      </li>
+      <li class="users">
+        <a href="">
+          <i class="fas fa-user"></i>
           <p>Users</p>
-          <button id="showAllUsersbtn">Show.All.Users</button>
+        </a>
+      </li>
+      <li class="users">
+        <a href="orders.html">
+          <i class="fas fa-user"></i>
+          <p>Orders</p>
+        </a>
+      </li>
+
+      <li class="products">
+        <a href="">
+          <i class="fas fa-table"></i>
+          <p>Products</p>
+        </a>
+      </li>
+
+      <li class="log-out">
+        <a href="signin.html">
+          <i class="fas fa-sign-out"></i>
+          <p>Logout</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="content">
+    <div class="title">
+      <p>dashboard</p>
+      <i class="fas fa-chart-bar"></i>
+    </div>
+
+    <div class="boxs-info">
+      <div class="box usersBox">
+        <div class="data">
+          <p>Users</p>
+          <i class="fas fa-user"></i>
         </div>
-        <i class="fas fa-user"></i>
+        <div class="UsersForme">
+          <h3><u>Users Control</u></h3>
+          <label>E-Mail</label>
+          <input id="email" type="text" /><br />
+          <label>FirstName</label>
+          <input id="fnameBox" type="text" /><br />
+          <label>LastName</label>
+          <input id="lNamebox" type="text" /><br />
+
+          <label>Phone</label>
+          <input id="phone" type="text" /><br />
+
+          <label for="">IsAdmin</label>
+          <select id="adminBox" name="Adim" placeholder="Admin or Not">
+            <option value="true">True</option>
+            <option value="false" selected>False</option>
+          </select><br />
+          <hr />
+          <!-- <button id="InsUserbtn">INSERT</button> -->
+          <button id="SelUserbtn">SELECT</button>
+          <button id="UpdUserbtn">UPDATE</button>
+          <button id="DelUserbtn">DELETE</button>
+        </div>
       </div>
-      <div class="tableContainer">
-        <table class="productsTable">
-          <thead>
-            <th>ID</th>
-            <th>Category</th>
-            <th>Title</th>
-            <th>Price</th>
-            <th>Qty</th>
-            <th>Img</th>
-            <th style="font-size: 16px">Select</th>
-          </thead>
-          <tbody id="prodtbody"></tbody>
-        </table>
-        <table class="usersTable">
-          <thead>
-            <th>FirstName</th>
-            <th>LastName</th>
-            <th>E-Mail</th>
-            <th>Phone</th>
-            <th>Admin</th>
-          </thead>
-          <tbody id="usertbody"></tbody>
-        </table>
+
+      <div class="box prodBox">
+        <div class="data">
+          <p>products</p>
+        </div>
+        <div class="productForme">
+          <div style="display: flex; justify-content: space-between">
+            <div style="width: 100%">
+              <h3><u>CRUD Products</u></h3>
+              <label>id</label>
+              <input type="text" id="itemId" disabled /><br />
+              <label>Category</label>
+              <select id="categories" name="categories">
+                <option value="men's clothing">Men's clothing</option>
+                <option value="women's clothing">Women's clothing</option>
+                <option value="electronics">Electronics</option>
+                <option value="jewelry">Jewelry</option>
+              </select><br />
+              <label>Title</label>
+              <input type="text" id="itemTitle" /><br />
+              <label>Price</label>
+              <input type="text" id="itemPrice" /><br />
+              <label>Qty</label>
+              <input type="text" id="itemQty" /><br />
+              <label>Descrip: </label>
+              <textarea id="decriptionArea" cols="30" rows="3" placeholder="Description of Item"></textarea>
+            </div>
+            <div style="width: 200px; border-left: 1px solid">
+              <label>ImgName</label> <input type="text" class="imageName" />
+              <label class="extLab" style="font-size: 10px; width: 30px; display: none"></label><label
+                class="upProgress" style="font-size: 10px; width: 30px; display: none"></label>
+              <label>ImgURL</label>
+              <input type="text" id="itemImg" />
+              <img class="myImg" />
+              <button class="selbtn" style="font-size: 10px; width: 70px; display: none">
+                SelectImage
+              </button>
+            </div>
+          </div>
+          <div>
+            <hr />
+            <button id="InsItembtn">INSERT</button>
+            <button id="SelItmbtn">SELECT</button>
+            <button id="UpdItmbtn">UPDATE</button>
+            <button id="DelItmbtn">DELETE</button>
+          </div>
+        </div>
       </div>
     </div>
-    <script src="../productsData.js" type="module"></script>
-    <script src="../dashboard.js" type="module"></script>
-    <script src="../index.js" type="module"></script>
-  </body>
+
+    <div class="title productesTbTitle">
+      <div id="productsDisplayDiv">
+        <p>Products</p>
+        <select id="showCategorie" style="width: 150px; margin: 10px">
+          <option value="men's clothing" id="categ">Men's clothing</option>
+          <option value="women's clothing" id="categ">
+            Women's clothing
+          </option>
+          <option value="electronics" id="categ">Electronics</option>
+          <option value="jewelry" id="categ">Jewelry</option>
+        </select>
+        <button id="showSelectedCategory">Show.Selected</button>
+        <button id="ShowAllItems">Show.All.Items</button>
+      </div>
+      <i class="fas fa-table"></i>
+    </div>
+    <div class="title UsersTbTitle">
+      <div id="usersbtnDiv">
+        <p>Users</p>
+        <button id="showAllUsersbtn">Show.All.Users</button>
+      </div>
+      <i class="fas fa-user"></i>
+    </div>
+    <div class="tableContainer">
+      <table class="productsTable">
+        <thead>
+          <th>ID</th>
+          <th>Category</th>
+          <th>Title</th>
+          <th>Price</th>
+          <th>Qty</th>
+          <th>Img</th>
+          <th style="font-size: 16px">Select</th>
+        </thead>
+        <tbody id="prodtbody"></tbody>
+      </table>
+      <table class="usersTable">
+        <thead>
+          <th>FirstName</th>
+          <th>LastName</th>
+          <th>E-Mail</th>
+          <th>Phone</th>
+          <th>Admin</th>
+        </thead>
+        <tbody id="usertbody"></tbody>
+      </table>
+    </div>
+  </div>
+  <script src="../productsData.js" type="module"></script>
+  <script src="../dashboard.js" type="module"></script>
+  <script src="../index.js" type="module"></script>
+</body>
+
 </html>
