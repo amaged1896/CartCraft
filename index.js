@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", function () {
       break;
   }
 });
+
+function getPageName(url) {
+  let regexResult = /\/pages\/(\w+)\.html/.exec(url);
+  return regexResult ? regexResult[1] : null;
+}
 let mensBtn = document.querySelector(".mensBtn");
 let jewelryBtn = document.querySelector(".jewelryBtn");
 let electronicsBtn = document.querySelector(".electronicsBtn");
@@ -108,7 +113,7 @@ function addToCart(e) {
   let product = products.find((element) => element.id == id);
   let user = JSON.parse(localStorage.getItem("user"));
   if (!user) {
-    window.location.href = "http://127.0.0.1:5500/pages/signup.html";
+    window.location.href = "https://amaged1896.github.io/CartCraft/signin";
   }
 
   user.shoppingCart = user.shoppingCart || [];
@@ -122,7 +127,7 @@ function addToWishList(e) {
   let product = products.find((element) => element.id == id);
   let user = JSON.parse(localStorage.getItem("user"));
   if (!user) {
-    window.location.href = "http://127.0.0.1:5500/pages/signup.html";
+    window.location.href = "https://amaged1896.github.io/CartCraft/signin";
   }
   user.wishList = user.wishList || [];
   user.wishList.push(product);
@@ -218,9 +223,8 @@ async function displayCartItems() {
 function displayOrdersTable() {
   ordersTable.innerHTML = ``;
   let user = JSON.parse(localStorage.getItem("user"));
-  // let cart = user.
   if (user.isAdmin !== true) {
-    window.location.href = "http://127.0.0.1:5500/pages/index.js";
+    window.location.href = "https://amaged1896.github.io/CartCraft/index";
   }
   let orders = user.pendingOrders;
 
@@ -267,18 +271,17 @@ function displayOrdersTable() {
 }
 
 function placeOrder(cart) {
-  // Check if the "user" and "users" keys exist in local storage
   if (!localStorage.getItem("user") || !localStorage.getItem("users")) {
     console.error("User or Users data not found in localStorage.");
-    return null; // Or handle the error appropriately
+    return null; 
   }
 
   let user = JSON.parse(localStorage.getItem("user"));
 
-  // Check if the user is found
+  
   if (!user) {
     console.error("User not found in localStorage.");
-    return null; // Or handle the error appropriately
+    return null; 
   }
 
   let order = {
@@ -298,7 +301,6 @@ function placeOrder(cart) {
 
   let allUsers = JSON.parse(localStorage.getItem("users"));
 
-  // Check if the "users" data is found
   if (!allUsers) {
     console.error("Users data not found in localStorage.");
     return null;
@@ -306,10 +308,9 @@ function placeOrder(cart) {
 
   let admin = allUsers.find((ele) => ele.isAdmin === true);
 
-  // Check if the admin is found
   if (!admin) {
     console.error("Admin not found in users data.");
-    return null; // Or handle the error appropriately
+    return null; 
   }
 
   // send the order to the admin
@@ -322,7 +323,7 @@ function placeOrder(cart) {
     allUsers[adminIndex] = admin;
   } else {
     console.error("Admin not found in users data.");
-    return null; // Or handle the error appropriately
+    return null; 
   }
 
   // Save the updated allUsers array back to local storage
@@ -344,7 +345,6 @@ function placeOrder(cart) {
 function approveOrder(e) {
   let id = Number(e.target.value);
 
-  // Retrieve data from local storage
   let allUsers = JSON.parse(localStorage.getItem("users"));
   let adminData = JSON.parse(localStorage.getItem("user"));
 
@@ -414,7 +414,6 @@ function declineOrder(e) {
   displayOrdersTable();
 }
 
-// Function to display order history for a user
 function displayOrderHistory() {
   let user = JSON.parse(localStorage.getItem("user"));
   return user.orderHistory || [];
@@ -436,7 +435,7 @@ function logout() {
   localStorage.removeItem("user");
   document.querySelector(".log-out").style.display = "none";
   document.querySelector(".signedIn").style.display = "block";
-  window.location.href = "http://127.0.0.1:5500/pages/index.js";
+  window.location.href = "https://amaged1896.github.io/CartCraft/index";
 }
 
 function displayPrevOrdersTable() {

@@ -28,10 +28,8 @@ signupForm.addEventListener("submit", (e) => {
     throw new Error("The passwords did not match");
   }
 
-  // Simulate asynchronous behavior with setTimeout
   setTimeout(() => {
     try {
-      // retrieve the users data
       const existingUsers = JSON.parse(localStorage.getItem("users")) || [];
 
       // check user existence
@@ -54,20 +52,11 @@ signupForm.addEventListener("submit", (e) => {
         pendingOrders: [],
         previousOrders: [],
       };
-      // let admin = {
-      //     firstName: firstName,
-      //     lastName: lastName,
-      //     password: password,
-      //     phoneNumber: phoneNumber,
-      //     email: email,
-      //     isAdmin: true,
-      //     pendingOrders: [],
-      //     approvedOrders: [],
-      // };
+      
       existingUsers.push(newUser);
       localStorage.setItem("users", JSON.stringify(existingUsers));
       // Redirect after successful signup
-      window.location.href = "http://127.0.0.1:5500/pages/signin.html";
+      window.location.href = "https://amaged1896.github.io/CartCraft/signin";
       signupForm.reset();
     } catch (err) {
       // Handle errors

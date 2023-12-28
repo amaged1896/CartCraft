@@ -7,7 +7,6 @@ const signIn = (e) => {
     const password = signInForm.password.value;
     if (!email || !password) return;
 
-    // Simulate asynchronous behavior with setTimeout
     setTimeout(() => {
         try {
             // retrieve the users data
@@ -21,13 +20,13 @@ const signIn = (e) => {
             } else if (isExist.isAdmin === true) {
                 let user = JSON.stringify(isExist);
                 localStorage.setItem('user', user);
-                window.location.href = "http://127.0.0.1:5500/pages/dashboard.html";
+                window.location.href = "https://amaged1896.github.io/CartCraft/dashboard";
             } else {
                 // save user data 
                 let user = JSON.stringify(isExist);
                 localStorage.setItem('user', user);
                 // Redirect after successful
-                window.location.href = "http://127.0.0.1:5500/pages/index.js";
+                window.location.href = "https://amaged1896.github.io/CartCraft/index";
                 signInForm.reset();
             }
         } catch (err) {
