@@ -30,7 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
     case "index":
       displayAllCategItems();
       break;
+    case "/":
+      displayAllCategItems();
+      break;
     default:
+      displayAllCategItems();
       break;
   }
 });
