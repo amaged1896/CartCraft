@@ -7,6 +7,11 @@ import {
 import { productsData } from "./productsData.js";
 
 let cartItems;
+function getPageName(url) {
+  let regexResult = /\/([^\/]+)\/?$/.exec(url);
+  return regexResult ? regexResult[1] : null;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   let currentURL = window.location.href;
   let pageName = getPageName(currentURL);
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
     case "index":
       displayAllCategItems();
       break;
-    case "/":
+    case "CartCraft":
       displayAllCategItems();
       break;
     default:
@@ -39,10 +44,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-function getPageName(url) {
-  let regexResult = /\/([^\/]+)\.html$/.exec(url);
-  return regexResult ? regexResult[1] : null;
-}
 let mensBtn = document.querySelector(".mensBtn");
 let jewelryBtn = document.querySelector(".jewelryBtn");
 let electronicsBtn = document.querySelector(".electronicsBtn");
