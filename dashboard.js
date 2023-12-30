@@ -128,7 +128,6 @@ function updateUserData() {
       pendingOrders: [],
       approvedOrders: [],
     };
-    console.log(adminStatus.value, updatedUser);
   } else {
     updatedUser = {
       firstName: fName.value,
@@ -141,7 +140,6 @@ function updateUserData() {
       pendingOrders: [],
       previousOrders: [],
     };
-    console.log(adminStatus.value, updatedUser);
   }
 
   users[originalUserIndex] = updatedUser;

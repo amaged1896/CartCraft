@@ -9,7 +9,6 @@ import { productsData } from "./productsData.js";
 let cartItems;
 function getPageName(url) {
   let regexResult = /\/([^\/]+)\/?$/.exec(url);
-  console.log(regexResult);
   return regexResult ? regexResult[1] : null;
 }
 
@@ -423,10 +422,8 @@ function displayOrderHistory() {
 
 function removeProduct(e) {
   let index = Number(e.target.value);
-  console.log(e.target.value);
   let data = JSON.parse(localStorage.getItem("user"));
   let cartProducts = data.shoppingCart;
-  console.log(cartProducts);
   cartProducts.splice(index, 1);
   data.shoppingCart = [...data.shoppingCart] || [];
   localStorage.setItem("user", JSON.stringify(data));
@@ -538,7 +535,6 @@ async function displayWishListItems() {
 
 function removeWishList(e) {
   let index = Number(e.target.value);
-  console.log(e.target.value);
   let data = JSON.parse(localStorage.getItem("user"));
   let wishProducts = data.wishList;
   wishProducts.splice(index, 1);
