@@ -5,6 +5,7 @@ const signIn = (e) => {
     e.preventDefault();
     const email = signInForm.email.value;
     const password = signInForm.password.value;
+    console.log(password);
     if (!email || !password) return;
 
     setTimeout(() => {
@@ -14,19 +15,19 @@ const signIn = (e) => {
             // check user existence
             const isExist = existingUsers.find(user => user.email === email);
 
-            if (password !== isExist.password || email !== isExist.email) {
+            console.log(password);
+            if (password != isExist.password || email != isExist.email) {
                 errMessage.innerHTML = "Email or Password is not correct";
-                throw new Error("Email or Password is not correct");
             } else if (isExist.isAdmin === true) {
                 let user = JSON.stringify(isExist);
                 localStorage.setItem('user', user);
-                window.location.href = "https://amaged1896.github.io/CartCraft/dashboard";
+                // window.location.href = "https://amaged1896.github.io/CartCraft/dashboard";
             } else {
                 // save user data 
                 let user = JSON.stringify(isExist);
                 localStorage.setItem('user', user);
                 // Redirect after successful
-                window.location.href = "https://amaged1896.github.io/CartCraft/index";
+                // window.location.href = "https://amaged1896.github.io/CartCraft/index";
                 signInForm.reset();
             }
         } catch (err) {

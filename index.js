@@ -9,6 +9,7 @@ import { productsData } from "./productsData.js";
 let cartItems;
 function getPageName(url) {
   let regexResult = /\/([^\/]+)\/?$/.exec(url);
+  console.log(regexResult);
   return regexResult ? regexResult[1] : null;
 }
 
@@ -17,29 +18,25 @@ document.addEventListener("DOMContentLoaded", function () {
   let pageName = getPageName(currentURL);
 
   switch (pageName) {
-    case "orders":
+    case "orders.html":
       displayOrdersTable();
       break;
-    case "cart":
+    case "cart.html":
       displayCartItems();
       break;
-    case "prevorders":
+    case "prevorders.html":
       displayPrevOrdersTable();
       break;
-    case "dashboard":
+    case "dashboard.html":
       showAllItems();
       break;
-    case "wishlist":
+    case "wishlist.html":
       displayWishListItems();
       break;
-    case "index":
-      displayAllCategItems();
-      break;
-    case "CartCraft":
+    case "index.html":
       displayAllCategItems();
       break;
     default:
-      displayAllCategItems();
       break;
   }
 });
@@ -160,10 +157,10 @@ electronicsBtn?.addEventListener("click", function (e) {
 // display all products all begining
 function displayAllCategItems() {
   printAllCategProductsKey = true;
-  mensBtn.click();
-  jewelryBtn.click();
-  electronicsBtn.click();
-  womensBtn.click();
+  mensBtn?.click();
+  jewelryBtn?.click();
+  electronicsBtn?.click();
+  womensBtn?.click();
   printAllCategProductsKey = false;
   productsTitle.innerHTML = "All Categories Products";
 }
@@ -440,7 +437,7 @@ function logout() {
   localStorage.removeItem("user");
   document.querySelector(".log-out").style.display = "none";
   document.querySelector(".signedIn").style.display = "block";
-  window.location.href = "https://amaged1896.github.io/CartCraft/index";
+  window.location.href = "https://amaged1896.github.io/CartCraft/signin";
 }
 
 function displayPrevOrdersTable() {
@@ -560,7 +557,7 @@ function wishListToCart(e) {
   displayWishListItems();
 }
 
-addToCartFromWishList.addEventListener("click", function () {
+addToCartFromWishList?.addEventListener("click", function () {
   let user = JSON.parse(localStorage.getItem("user"));
   let wishlistitems = user.wishList;
   wishlistitems.forEach((item) => user.shoppingCart.push(item));
